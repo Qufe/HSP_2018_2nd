@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonStartNewActivity.setOnClickListener(this);  // OnClick 리스너 셋팅
 
         intentSubActivity = new Intent(getApplicationContext(), SubActivity.class);  // 앱이 시작될 때 서브액티비티를 위한 인텐트를 생성.
+        intentSubActivity.putExtra("Put Extra Message", "Good!!");
 
     }
 
