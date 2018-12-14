@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mySportsCar = new MyCar();
-        mySportsCar.speed = 10;
+        mySportsCar = new MyCar(10);
+//        mySportsCar.speed_A = 10;
         mySportsCar.speedUp();
         mySportsCar.speedDown();
     }
