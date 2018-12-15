@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_view);
 
         myArrayList2 = new ArrayList<>();
-        myCar_1 = new MyCar(10);
-        myCar_2 = new MyCar(20);
-        myCar_3 = new MyCar(30);
+        myCar_1 = new MyCar(10, "AAA");
+        myCar_2 = new MyCar(20, "BBB");
+        myCar_3 = new MyCar(30, "CCC");
 
         myArrayList2.add(myCar_1);
         myArrayList2.add(myCar_2);

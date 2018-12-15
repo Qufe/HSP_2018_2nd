@@ -22,7 +22,7 @@ public class MyAdapter extends BaseAdapter {  // 이 어댑터는 누가 사용?
 
     Activity activity;  // 액티비티 선언.
 
-    ArrayList myArrayList;  // 여기 안에 있는 내용을 리스트뷰에 표현.
+    ArrayList<MyCar> myArrayList;  // 여기 안에 있는 내용을 리스트뷰에 표현.
 
     MyAdapter(Activity activity_B, ArrayList arrayList_B){
         activity = activity_B;
@@ -53,8 +53,8 @@ public class MyAdapter extends BaseAdapter {  // 이 어댑터는 누가 사용?
         TextView textView1 = view_item.findViewById(R.id.textView1);
         TextView textView2 = view_item.findViewById(R.id.textView2);
 
-        textView1.setText("Text 1");
-        textView2.setText("Text 2");
+        textView1.setText("" + myArrayList.get(position).speed);
+        textView2.setText(myArrayList.get(position).maker);
 
         return view_item;
     }

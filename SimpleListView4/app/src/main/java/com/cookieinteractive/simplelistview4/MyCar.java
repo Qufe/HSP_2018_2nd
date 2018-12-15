@@ -7,8 +7,9 @@ public class MyCar {  // 클래스
     int engine;
     String maker;
 
-    MyCar(int speed_B) {  // 메서드
+    MyCar(int speed_B, String maker_B) {  // 메서드
         speed = speed_B;
+        maker = maker_B;
     }
 
     void speedUp() {  // 메서드
