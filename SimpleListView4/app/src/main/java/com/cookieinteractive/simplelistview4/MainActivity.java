@@ -2,6 +2,7 @@ package com.cookieinteractive.simplelistview4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -14,10 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     MyCar mySportsCar;
 
-    ArrayList<HashMap<String, String>> myArrayList;
-    HashMap<String, String> hashMap_1;
-    HashMap<String, String> hashMap_2;
-
     ArrayList<MyCar> myArrayList2;  // 커스텀 리스트 뷰를 위한 데이터 저장소
     MyCar myCar_1;
     MyCar myCar_2;
@@ -28,29 +25,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mySportsCar = new MyCar(20);
-        mySportsCar.speedUp();
-        mySportsCar.speedDown();
-
         listView = findViewById(R.id.list_view);
 
-        myArrayList = new ArrayList<>();
-        hashMap_1 = new HashMap<>();
-        hashMap_2 = new HashMap<>();
+        myArrayList2 = new ArrayList<>();
+        myCar_1 = new MyCar(10);
+        myCar_2 = new MyCar(20);
+        myCar_3 = new MyCar(30);
 
-        hashMap_1.put("school", "MK");
-        hashMap_1.put("name", "NHS");
+        myArrayList2.add(myCar_1);
+        myArrayList2.add(myCar_2);
+        myArrayList2.add(myCar_3);
 
-        hashMap_2.put("school", "Free");
-        hashMap_2.put("name", "KHS");
+        MyAdapter my_my_Adapter = new MyAdapter(this, myArrayList2);
 
-        myArrayList.add(hashMap_1);
-        myArrayList.add(hashMap_2);
+        listView.setAdapter(my_my_Adapter);
 
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this, myArrayList,
-                android.R.layout.simple_list_item_2, new String[]{"school", "name"},
-                new int[]{android.R.id.text1, android.R.id.text2});
-
-        listView.setAdapter(simpleAdapter);
     }
 }
